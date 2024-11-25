@@ -3,7 +3,7 @@ require_once 'model.php';
 require_once 'controllers.php';
 
 // Front controller - Point d'entrée de l'application
-$requestUri = strtok($_SERVER['REQUEST_URI'], '?'); // Ignore les paramètres de query string
+$requestUri = strtok($_SERVER['REQUEST_URI'], '?');
 
 if ($requestUri === '/' || $requestUri === '/list') {
     list_action();
