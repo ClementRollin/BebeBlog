@@ -11,7 +11,7 @@
                     <p class="card-text">
                         <?= htmlspecialchars(substr($post['content'], 0, 100)) ?>...
                     </p>
-                    <a href="/show/<?= $post['id'] ?>" class="btn btn-primary btn-sm">Read more</a>
+                    <a href="/show/<?= $post['id'] ?>" class="btn btn-primary btn-sm">Lire l'article</a>
                 </div>
             </div>
         </div>
