@@ -11,6 +11,7 @@
         }
         header {
             padding: 1rem 0;
+            background: linear-gradient(135deg, #6c63ff, #3b82f6);
         }
         body {
             display: flex;
@@ -18,14 +19,6 @@
         }
         main {
             flex: 1;
-        }
-        footer {
-            background-color: #3b82f6;
-            color: white;
-            padding: 1rem 0;
-        }
-        header {
-            background: linear-gradient(135deg, #6c63ff, #3b82f6);
         }
     </style>
 </head>
@@ -37,11 +30,6 @@
 <main class="container my-4">
     <?= $content ?>
 </main>
-<footer class="text-center mt-auto">
-    <div class="container">
-        <p>&copy; <?= date('Y') ?> Mon Blog - Made with ❤️</p>
-    </div>
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
