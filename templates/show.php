@@ -10,7 +10,7 @@
         </article>
         <div class="mt-4 d-flex justify-content-between">
             <a href="/edit/<?= $post['id'] ?>" class="btn btn-outline-primary">Mettre à jour</a>
-            <a href="/delete/<?= $post['id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this post?');">Supprimer</a>
+            <a href="/delete/<?= $post['id'] ?>" class="btn btn-outline-danger" onclick="return confirm('Vous êtes-sûre de vouloir supprimer cette article ? Cette action est irréversible.');">Supprimer</a>
         </div>
         <div class="mt-4 text-center">
             <a href="/list" class="btn btn-secondary">Retour aux articles</a>
