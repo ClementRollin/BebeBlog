@@ -1,4 +1,22 @@
 <?php ob_start(); ?>
+<style>
+    .pagination .page-item.active .page-link {
+        background-color: #3b82f6;
+        border-color: #3b82f6;
+        color: #fff;
+    }
+    .pagination .page-link {
+        color: #3b82f6;
+        transition: all 0.3s;
+    }
+    .pagination .page-link:hover {
+        background-color: #e0f0ff;
+        border-color: #3b82f6;
+    }
+    .pagination .page-item.disabled .page-link {
+        color: #ccc;
+    }
+</style>
 <h2 class="mb-4">Tous les articles</h2>
 <div class="row g-4">
     <?php foreach ($posts as $post): ?>
@@ -19,12 +37,17 @@
     <?php endforeach; ?>
 </div>
 
-<!-- Pagination -->
 <nav class="mt-4">
     <ul class="pagination justify-content-center">
         <?php if ($page > 1): ?>
             <li class="page-item">
-                <a class="page-link" href="/list?page=<?= $page - 1 ?>">Retour</a>
+                <a class="page-link" href="/list?page=<?= $page - 1 ?>" aria-label="Précédent">
+                    <span aria-hidden="true">&laquo; Retour</span>
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Précédent">&laquo; Retour</span>
             </li>
         <?php endif; ?>
 
@@ -36,7 +59,13 @@
 
         <?php if ($page < $totalPages): ?>
             <li class="page-item">
-                <a class="page-link" href="/list?page=<?= $page + 1 ?>">Suivant</a>
+                <a class="page-link" href="/list?page=<?= $page + 1 ?>" aria-label="Suivant">
+                    <span aria-hidden="true">Suivant &raquo;</span>
+                </a>
+            </li>
+        <?php else: ?>
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Suivant">Suivant &raquo;</span>
             </li>
         <?php endif; ?>
     </ul>
