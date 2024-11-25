@@ -3,7 +3,7 @@ require_once 'model.php';
 require_once 'controllers.php';
 
 // Front controller
-$requestUri = $_SERVER['REQUEST_URI'];
+$requestUri = strtok($_SERVER['REQUEST_URI'], '?'); // Ignore les paramètres de query string
 
 if ($requestUri === '/' || $requestUri === '/list') {
     list_action();
@@ -19,4 +19,3 @@ if ($requestUri === '/' || $requestUri === '/list') {
     http_response_code(404);
     echo "Page not found";
 }
-?>

@@ -1,7 +1,14 @@
 <?php
 function list_action()
 {
-    $posts = getPosts();
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $limit = 6;
+    $offset = ($page - 1) * $limit;
+
+    $posts = getPostsPaginated($limit, $offset);
+    $totalPosts = getTotalPostCount();
+    $totalPages = ceil($totalPosts / $limit);
+
     include 'templates/list.php';
 }
 

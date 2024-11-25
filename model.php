@@ -48,4 +48,21 @@ function deletePost($id)
     $stmt = $pdo->prepare('DELETE FROM posts WHERE id = ?');
     return $stmt->execute([$id]);
 }
+
+function getPostsPaginated($limit, $offset)
+{
+    $pdo = getDbConnection();
+    $stmt = $pdo->prepare('SELECT * FROM posts ORDER BY created_at DESC LIMIT :limit OFFSET :offset');
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+    $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getTotalPostCount()
+{
+    $pdo = getDbConnection();
+    $stmt = $pdo->query('SELECT COUNT(*) as count FROM posts');
+    return $stmt->fetch(PDO::FETCH_ASSOC)['count'];
+}
 ?>
