@@ -1,5 +1,9 @@
 <?php ob_start(); ?>
 <style>
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
     .pagination .page-item.active .page-link {
         background-color: #3b82f6;
         border-color: #3b82f6;
@@ -15,6 +19,17 @@
     }
     .pagination .page-item.disabled .page-link {
         color: #ccc;
+    }
+    .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 </style>
 <h2 class="mb-4">Tous les articles</h2>
