@@ -33,7 +33,7 @@
     }
 </style>
 <h2 class="mb-4">Tous les articles</h2>
-<p>Nombres d'articles : <?= getTotalPostCount() ?></p>
+<p>Nombres d'articles : <strong><?= getTotalPostCount() ?></strong></p>
 <div class="row g-4">
     <?php foreach ($posts as $post): ?>
         <div class="col-md-4">
